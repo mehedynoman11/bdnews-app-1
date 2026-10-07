@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import logo from '../../public/logonews.jpeg'
 import NavLinkPage from './NavLinks.';
+import Link from 'next/link';
+import UserInfo from './UserInfo';
 
 const HeaderPage = () => {
     const date = new Date();
@@ -22,17 +24,16 @@ const HeaderPage = () => {
                         </div>
                     </div>
                     <nav className='mt-3 text-sm'>
-                <NavLinkPage />
-            </nav>
+                        <NavLinkPage />
+                    </nav>
                 </div>
                 <div className="absolute right-2 top-4 ">
                     <div className="flex gap-2">
-                    <button className='btn btn-sm'>সাইন ইন</button>
-                    <button className='btn btn-sm bg-red-700 text-white'>সাইন আপ</button>
-                </div>
+                            <UserInfo />
+                    </div>
                 </div>
             </div>
-            
+
         </header>
     );
 };

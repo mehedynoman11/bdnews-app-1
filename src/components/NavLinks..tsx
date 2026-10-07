@@ -19,7 +19,7 @@ const NavLinkPage = async () => {
             <Link href={'/'}>হোম</Link>
             {navFilter.map((nav, ind) => {
                 return(
-                    <Link key={ind} href={nav.slug}>{nav.title}</Link>
+                    <Link key={ind} href={`/category/${nav.slug}`}>{nav.title}</Link>
                 )
             })}
         </div>
