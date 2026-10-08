@@ -2,6 +2,7 @@
 import { authClient } from '@/lib/auth-client';
 
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const SignInPage = () => {
     const onSubmit = async (e:React.SubmitEvent<HTMLElement>) => {
@@ -15,10 +16,11 @@ const SignInPage = () => {
         })
 
         if (data) {
-            console.log(data);
+            // console.log(data);
+            toast.success('সাইন ইন সফল হয়েছে');
         }
         if (error) {
-            console.error(error)
+            toast.error(error.message || error.statusText || 'সাইন ইন ব্যর্থ হয়েছে')
         }
     }
     return (

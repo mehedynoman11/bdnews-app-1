@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import React from "react";
+import { toast } from "react-toastify";
 
 const SignUpPage = () => {
     const onSubmit =  async (e:React.SubmitEvent<HTMLElement>) => {
@@ -17,12 +18,12 @@ const SignUpPage = () => {
         });
         
         if (data) {
-            console.log(data);
+            toast.success('সাইন আপ সফল হয়েছে');
             redirect('/');
         }
 
         if (error) {
-            console.error(error)
+             toast.error(error.message || error.statusText || 'সাইন আপ ব্যর্থ হয়েছে')
         }
     }
     return (
